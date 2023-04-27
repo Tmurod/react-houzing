@@ -1,25 +1,26 @@
-import { useState } from "react";
-import Test from "../components/test";
-import Text from "../components/text";
+import styled from "styled-components";
+import Navbar from "../components/navbar/navbar";
+import "./root.scss";
+import Search from "../components/search/serach";
+
+let Section = styled.section`
+background: ${({header}) => header ? "#0D263B" : ""};
+`;
+let Container = styled.div``;
+let Div = styled.div``;
 
 let Root = () => {
-  let [data, setData] = useState([
-    {id:1, name: "ermat", year: 2000},
-    {id:2, name: "tmurod", year: 1995},
-    {id:3, name: "dilmurod", year: 1999},
-    {id:4, name: "soft", year: 2004},
-  ]);
-  
-  let del = (id) => {
-    let res = data.filter(val => val.id !== id);
-    setData(res)
-   }
-   
   return (
-    <div>
-      <Text data={data}></Text>
-      <Test data={data} ondel={del}></Test>
-    </div>
+    <Div>
+      <Section header>
+        <Container className="container">
+          <Navbar />
+        </Container>
+      </Section>
+      <Container className="container">
+        <Search />
+      </Container>
+    </Div>
   );
 }
 

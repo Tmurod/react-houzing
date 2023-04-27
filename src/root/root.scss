@@ -1,0 +1,66 @@
+@mixin col {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow';
+    font-style: normal;
+  }
+  
+  .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  
+    @include xl {
+      max-width: 1440px;
+    }
+  
+    @include lg {
+      max-width: 960px;
+    }
+  
+    @include md {
+      max-width: 720px;
+    }
+  
+    @include sm {
+      max-width: 690px;
+    }
+  
+    @include col {
+      max-width: 355px;
+    }
+  }
+  
