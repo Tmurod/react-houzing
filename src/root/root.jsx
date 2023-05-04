@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Navbar from "../components/navbar/navbar";
 import "./root.scss";
 import Search from "../components/search/serach";
+import Modal from "../components/search/modal/modal";
 
 let Section = styled.section`
 background: ${({header}) => header ? "#0D263B" : ""};
@@ -19,6 +20,7 @@ let Root = () => {
       </Section>
       <Container className="container">
         <Search />
+        {/* <Modal /> */}
       </Container>
     </Div>
   );
