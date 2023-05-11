@@ -1,28 +1,16 @@
-import styled from "styled-components";
-import Navbar from "../components/navbar/navbar";
 import "./root.scss";
-import Search from "../components/search/serach";
-import Modal from "../components/search/modal/modal";
-
-let Section = styled.section`
-background: ${({header}) => header ? "#0D263B" : ""};
-`;
-let Container = styled.div``;
-let Div = styled.div``;
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 let Root = () => {
   return (
-    <Div>
-      <Section header>
-        <Container className="container">
-          <Navbar />
-        </Container>
-      </Section>
-      <Container className="container">
-        <Search />
-        {/* <Modal /> */}
-      </Container>
-    </Div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/home" element={<h1>home</h1>} />
+        <Route path="/properties" element={<h1>properties</h1>} />
+        <Route path="/*" element={<h1>404 not found</h1>} />
+        <Route path="/" element={<Navigate to={"/home"} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
