@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import navbar from "../utils/navbar";
 import Navbar from "../components/navbar";
+import GenInput from '../components/generics/input';
 
 let Root = () => {
   return (
@@ -18,6 +19,7 @@ let Root = () => {
         <Route path="*" element={<h1>404 not found</h1>} />
         <Route path="/" element={<Navigate to={"/home"} />} />
       </Routes>
+      <GenInput placeholder={"Enter an address, neighborhood, city, or ZIP code"} />
     </BrowserRouter>
   );
 }

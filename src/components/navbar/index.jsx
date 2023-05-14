@@ -2,6 +2,7 @@ import { Outlet, useNavigate } from "react-router-dom"
 import { Container, Logo, NavbarContent, Section, Link } from "./style";
 import logo from "../../assets/icons/logo.svg";
 import navbar from "../../utils/navbar";
+import GenButton from "../generics/button";
 
 // import {  } from "./style"
 
@@ -23,7 +24,7 @@ const Navbar = () => {
                     }
                 </NavbarContent>
                 <NavbarContent>
-                    <button>Login</button>
+                    <GenButton type={"dark"} onClick={() => navigate("/signIn")} />
                 </NavbarContent>
             </Section>
             <Outlet />
