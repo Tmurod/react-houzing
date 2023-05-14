@@ -32,6 +32,7 @@ export const Logo = styled.img`
 cursor: pointer;
 `;
 
+
 export const Link = styled(NavLink)`
 text-decoration: none;
 color: #fff;
