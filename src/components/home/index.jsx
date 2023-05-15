@@ -5,7 +5,7 @@ import Cards from "../cards";
 const Home = () => {
     return (
         <Container>
-            {/* <IntroCarousel /> */}
+            <IntroCarousel />
             <Cards />
         </Container>
     );
