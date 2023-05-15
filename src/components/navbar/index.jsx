@@ -3,6 +3,7 @@ import { Container, Logo, NavbarContent, Section, Link } from "./style";
 import logo from "../../assets/icons/logo.svg";
 import navbar from "../../utils/navbar";
 import GenButton from "../generics/button";
+import Filter from "../filter";
 
 // import {  } from "./style"
 
@@ -27,6 +28,7 @@ const Navbar = () => {
                     <GenButton type={"dark"} onClick={() => navigate("/signIn")} />
                 </NavbarContent>
             </Section>
+            <Filter />
             <Outlet />
         </Container>
     );
