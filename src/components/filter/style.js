@@ -20,6 +20,7 @@ margin-right: 10px;
 `;
 
 export const FilterMenu = styled.div`
+background: #FFFFFF;
 padding: 30px;
 border-radius: 5px;
 h1 {

@@ -19,7 +19,6 @@ let Root = () => {
         <Route path="*" element={<h1>404 not found</h1>} />
         <Route path="/" element={<Navigate to={"/home"} />} />
       </Routes>
-      <GenInput placeholder={"Enter an address, neighborhood, city, or ZIP code"} />
     </BrowserRouter>
   );
 }

@@ -1,9 +1,12 @@
-import { Container } from "./style"
+import { Container } from "./style";
+import IntroCarousel from "../carousel/index";
+import Cards from "../cards";
 
 const Home = () => {
     return (
         <Container>
-            <h1>Home</h1>
+            {/* <IntroCarousel /> */}
+            <Cards />
         </Container>
     );
 }
