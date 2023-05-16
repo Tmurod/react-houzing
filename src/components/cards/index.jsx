@@ -1,5 +1,5 @@
 import {  CardIcons, CardInfo, CardPrice, Container, Icons, Img } from "./style";
-import image from "../../assets/images/unsplash_5q1KnUjtjaM.png";
+import image from "../../assets/images/no image.jpg";
 
 const Cards = (props) => {
     return (
@@ -31,8 +31,9 @@ const Cards = (props) => {
                         <del>{props.delPrice || "$2,800/mo"}</del>
                         <h2>{props.price || "$7,500/mo"}</h2>
                     </CardPrice.Price>
-                    <CardPrice.Price>
-
+                    <CardPrice.Price className="icons" >
+                      <Icons.Resize />
+                      <Icons.Heart />
                     </CardPrice.Price>
                 </CardPrice>
             </CardInfo>

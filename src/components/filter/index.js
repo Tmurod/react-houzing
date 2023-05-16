@@ -47,7 +47,6 @@ const Filter = () => {
     </FilterMenu>,
     key: '0'
   },
-
   ]
 
   return (

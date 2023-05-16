@@ -1,40 +1,42 @@
-import React from 'react';
-import { Container } from "./style";
+import React, { useRef } from 'react';
+import { Arrow, Container, Img, Blur, Content } from "./style";
 import { Carousel } from 'antd';
+import img1 from "../../assets/images/carousel-2.png";
+import img3 from "../../assets/images/carousel2.png";
 
-const contentStyle = {
-  margin: 0,
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-  // width: "800px"
-};
+const IntroCarousel = (props) => {
 
-const IntroCarousel = () => {
+  const sliderRef = useRef();
 
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   }
 
+  const move = (e) => {
+    e.target.dataset.name === "right" ? sliderRef.current.next() : sliderRef.current.prev();
+  }
+
   return (
     <Container>
-      <Carousel afterChange={onChange}>
-        <div>
-          <h3 style={contentStyle}>1</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>2</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>3</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>4</h3>
-        </div>
+      <Carousel afterChange={onChange} ref={sliderRef}>
+        <Img src={img1} />
+        <Img src={img3} />
       </Carousel>
-    // </Container>
+      <Blur />
+      <Content>
+        <Content.Title>
+          {props.title || <p>Skyper Pool Partment</p>}
+        </Content.Title>
+        <Content.Subtitle>
+          {props.price || <p>112 Glenwood Ave Hyde Park, Boston, MA</p>}
+        </Content.Subtitle>
+        <Content.Price>
+          {props.price || <p>$5,250/mo</p>}
+        </Content.Price>
+      </Content>
+      <Arrow onClick={move} left={"left"} />
+      <Arrow name='right' onClick={move} />
+    </Container>
   );
 }
 
