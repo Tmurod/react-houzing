@@ -9,6 +9,9 @@ padding: 0 130px;
 padding-top: 10px;
 padding-bottom: 10px;
 gap: 20px;
+width: 100%;
+max-width: 1440px;
+margin: 0 auto;
 `;
 
 export const Icon = styled.div``;

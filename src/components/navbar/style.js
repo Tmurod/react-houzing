@@ -7,17 +7,20 @@ flex-direction: column;
 justify-content: center;
 `;
 
+export const Block = styled.div`
+background: #0D263B;
+`
+
 export const Section = styled.section`
 display: flex;
 justify-content: space-between;
 align-items: center;
-background: #0D263B;
 color: #fff;
 padding: 0 130px;
 height: 64px;
 margin: 0 auto;
 width: 100%;
-// max-width: 1440px;
+max-width: 1440px;
 `;
 
 export const NavbarContent = styled.div`
