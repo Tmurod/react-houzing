@@ -4,6 +4,7 @@ import logo from "../../assets/icons/logo.svg";
 import navbar from "../../utils/navbar";
 import GenButton from "../generics/button";
 import Filter from "../filter";
+import Footer from "../footer";
 
 // import {  } from "./style"
 
@@ -32,6 +33,7 @@ const Navbar = () => {
             </Block>
             <Filter />
             <Outlet />
+            <Footer />
         </Container>
     );
 }

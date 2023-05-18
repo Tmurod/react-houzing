@@ -1,4 +1,4 @@
-import {  CardIcons, CardInfo, CardPrice, Container, Icons, Img } from "./style";
+import { CardIcons, CardInfo, CardPrice, Container, Icons, Img } from "./style";
 import image from "../../assets/images/no image.jpg";
 
 const Cards = (props) => {
@@ -32,8 +32,6 @@ const Cards = (props) => {
                         <h2>{props.price || "$7,500/mo"}</h2>
                     </CardPrice.Price>
                     <CardPrice.Price className="icons" >
-                      <Icons.Resize />
-                      <Icons.Heart />
                     </CardPrice.Price>
                 </CardPrice>
             </CardInfo>
