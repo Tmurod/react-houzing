@@ -3,7 +3,6 @@ import { ContanctInfo, Conteiner, Content, ContentBorder, ContentFooter, Content
 const Footer = () => {
     return (
         <Section>
-
             <Conteiner>
                 <Content>
                     <ContentInfo>
@@ -94,13 +93,14 @@ const Footer = () => {
                             </Text>
                         </ContentInfo.ContentText>
                     </ContentInfo>
-                    {/* <ContentBorder></ContentBorder> */}
+                    <ContentBorder></ContentBorder>
                     <ContentFooter>
                         <Icons.Logo />
                         <ContanctInfo>
-                            <Text >
+                            <Text address className="address" >
                                 Copyright © 2021 CreativeLayers. All Right Reserved.
                             </Text>
+                            <Icons.Arrow />
                         </ContanctInfo>
                     </ContentFooter>
                 </Content>

@@ -12,6 +12,13 @@ const getType = ({ type }) => {
   }
 }
 
+const getWith = ({ width }) => {
+    if (!width) return "130px";
+    else if (`${width}`.includes("%")) return "100%";
+    else return `${width}px`;
+}
+
+
 export const Container = styled.div``;
 
 export const Button = styled.button`
@@ -19,12 +26,12 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: ${({ height }) => height ? `${height}px` : "44px"};
-width: ${({ width }) => width ? `${width}px` : "128px"};
+width: ${getWith};
 border-radius: 2px;
 ${getType}
 min-width: 120px;
 font-size: 14px;
 :active {
-    opacity: 0.7
+  opacity: 0.7
 }
 `;

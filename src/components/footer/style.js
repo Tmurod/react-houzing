@@ -7,11 +7,13 @@ import { ReactComponent as twitter } from "../../assets/icons/twitter.svg";
 import { ReactComponent as instagram } from "../../assets/icons/instagram.svg";
 import { ReactComponent as linkedin } from "../../assets/icons/linkedin.svg";
 import { ReactComponent as logo } from "../../assets/icons/logo.svg";
+import { ReactComponent as arrow } from "../../assets/icons/arrow1.svg";
+
 
 export const Section = styled.div`
 background: #0D263B;
 margin-top: 48px;
-
+padding-bottom: 24px;
 `;
 
 export const Conteiner = styled.div`
@@ -21,11 +23,12 @@ margin: 0 auto;
 `;
 
 export const Content = styled.div`
+padding: 0 130px;
 `;
 
 export const ContentInfo = styled.div`
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 padding-top: 48px;
 `;
 
@@ -34,6 +37,10 @@ display: flex;
 align-items: center;
 gap: ${({ icon }) => icon ? "32px" : "22px"};
 padding-top: 20px;
+gap: 70px;
+.address {
+    width: 100%;
+}
 `;
 
 ContentInfo.ContentText = styled.div`
@@ -65,6 +72,10 @@ export const Icons = styled.div``;
 Icons.Location = styled(location)``;
 Icons.Phone = styled(phone)``;
 Icons.Email = styled(email)``;
+Icons.Arrow = styled(arrow)`
+transform: rotate(90deg);
+border-radius: 3px;
+`;
 Icons.Facebook = styled(facebook)`
 cursor: pointer;
 `;
@@ -77,9 +88,7 @@ cursor: pointer;
 Icons.Linkedin = styled(linkedin)`
 cursor: pointer;
 `;
-Icons.Logo = styled(logo)`
-padding: 0 130px;
-`;
+Icons.Logo = styled(logo)``;
 
 export const ContentBorder = styled.div`
 width: 100%;
@@ -89,5 +98,7 @@ margin-bottom: 16px;
 `;
 
 export const ContentFooter = styled.div`
-
+display: flex;
+align-items: center;
+justify-content: space-between;
 `;

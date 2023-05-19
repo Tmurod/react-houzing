@@ -7,7 +7,7 @@ import Cards from "../cards";
 
 const Properties = () => {
   const [data, setData] = useState([]);
-  const [photo , setPhoto] = useState([]);
+  // const [photo , setPhoto] = useState([]);
   
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -17,19 +17,19 @@ const Properties = () => {
       });
   }, []);
   
-  useEffect(() => {
-    fetch("https://picsum.photos/v2/list")
-      .then(res => res.json())
-      .then(res => {
-        setPhoto(res);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://picsum.photos/v2/list")
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       setPhoto(res);
+  //     });
+  // }, []);
   
   return (
     <Container>
       {
         data.map(val => {
-          return <Cards key={val.id} data={val} photo={photo} />
+          return <Cards key={val.id} data={val} />
         })
       }
     </Container>
