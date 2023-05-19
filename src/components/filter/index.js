@@ -55,7 +55,7 @@ const Filter = () => {
       <Dropdown
         menu={{ items: menu, }}
         placement="bottomRight"
-        trigger={['click']}
+        trigger={'click'}
         arrow={{ pointAtCenter: true }}
       >
         <div>
