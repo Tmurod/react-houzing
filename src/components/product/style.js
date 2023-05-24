@@ -29,6 +29,7 @@ margin: 0 auto;
 
 export const ImageContent = styled.div`
 display: flex;
+align-items: center;
 gap: 20px;
 `;
 
@@ -44,7 +45,10 @@ display: flex;
 gap: 20px;
 `;
 
-export const Img = styled.img``;
+export const Img = styled.img`
+width: 100%;
+min-width: 250px;
+`;
 
 export const Content = styled.div`
 display: flex;

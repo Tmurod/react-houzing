@@ -18,11 +18,10 @@ export const Img = styled.img`
 width: 100%;
 max-height: 220px;
 object-fit: cover;
-margin-bottom: 24px;
 `;
 
 export const CardInfo = styled.div`
-padding: 0 20px;
+padding: 20px 20px;
 `;
 
 export const CardIcons = styled.div`
@@ -62,5 +61,9 @@ align-items: center;
 }
 `;
 
-CardPrice.Price = styled.div``;
+CardPrice.Price = styled.div`
+display: ${({ flex }) => flex && "flex"};
+align-items: ${({ flex }) => flex && "center"};
+gap: 20px;
+`;
 

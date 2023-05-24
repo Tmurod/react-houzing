@@ -1,6 +1,7 @@
 import { Container, Content, ContentInfo, Description, HomeInfo, HomeTitle, HomeTitleInfo, Icons, ImageContent, Img, Section, SubImages, SubimageContent, UserContent, } from "./style";
 import img from "../../assets/images/unsplash_VWcPlbHglYc.png";
 import img1 from "../../assets/images/unsplash_ZtC4_rPCRXA.png";
+import { useEffect } from "react";
 
 
 const Product = (props) => {

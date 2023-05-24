@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import navbar from "../utils/navbar";
 import Navbar from "../components/navbar";
 import GenInput from '../components/generics/input';
+import { useEffect } from 'react';
 
 let Root = () => {
   return (
@@ -9,7 +10,7 @@ let Root = () => {
       <Routes>
         <Route element={<Navbar />}>
           {
-            navbar.map((val, ind) => {
+            navbar.map((val) => {
               return (
                 <Route key={val.id} path={val.path} element={val.element} />
               );

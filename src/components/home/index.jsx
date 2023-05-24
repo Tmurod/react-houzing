@@ -3,7 +3,7 @@ import IntroCarousel from "../carousel/index";
 import Cards from "../cards";
 import Choose from "../choose";
 import Image from "../image/image";
-import Category from "../category";
+import Category from "../categoryCarousel";
 
 const Home = () => {
     return (
