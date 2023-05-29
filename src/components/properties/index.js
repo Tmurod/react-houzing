@@ -1,6 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Container } from "./style"
-import { useState } from "react";
 import Cards from "../cards";
 
 const { REACT_APP_BASE_URL: url } = process.env;
@@ -12,14 +11,14 @@ const Properties = () => {
     fetch(`${url}/houses/list`)
       .then(res => res.json())
       .then(res => {
-        setData(res.data)
+        setData(res.data);
       });
   }, []);
-
   return (
     <Container>
       {
         data.map(val => {
+          // console.log(val);
           return <Cards key={val.id} data={val} />
         })
       }

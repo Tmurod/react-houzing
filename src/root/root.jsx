@@ -2,7 +2,6 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import navbar from "../utils/navbar";
 import Navbar from "../components/navbar";
 import GenInput from '../components/generics/input';
-import { useEffect } from 'react';
 
 let Root = () => {
   return (

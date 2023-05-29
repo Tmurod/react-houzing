@@ -21,7 +21,9 @@ const Navbar = () => {
                         {
                             navbar.map((val) => {
                                 return (
+                                  !val.hidden && (
                                     <Link key={val.id} to={val.path} className={({ isActive }) => isActive && "active"}>{val.title}</Link>
+                                  )
                                 );
                             })
                         }

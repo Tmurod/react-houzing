@@ -4,6 +4,7 @@ import Cards from "../cards";
 import Choose from "../choose";
 import Image from "../image/image";
 import Category from "../categoryCarousel";
+import { useEffect } from "react";
 
 const Home = () => {
     return (

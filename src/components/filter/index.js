@@ -1,10 +1,16 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "../generics/button/style";
 import { Input } from "../generics/input/style";
 import { Container, Icon, FilterMenu, FilterRows } from "./style";
 import { Dropdown } from "antd";
+import { useNavigate, useLocation } from "react-router-dom";
+import Replace from "../../hooks/useReplace";
 
 const Filter = () => {
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+ 
 
   const countryRef = useRef();
   const regionRef = useRef();
@@ -18,12 +24,17 @@ const Filter = () => {
   const minRef = useRef();
   const maxRef = useRef();
 
+  const change = (e) => {
+    navigate(`/${Replace(e.target.value, e.target.placeholder.toLowerCase())}`);
+    // console.log(e.target.value, e.target.placeholder);
+  }
+
   const menu = [{
     label: <FilterMenu>
       <>
         <h1 className="title">Address</h1>
         <FilterRows>
-          <Input placeholder="Country" ref={countryRef} />
+          <Input onChange={change} placeholder="Country" ref={countryRef} />
           <Input placeholder="Region" ref={regionRef} />
           <Input placeholder="City" ref={cityRef} />
           <Input placeholder="Zip code" ref={codeRef} />
@@ -53,10 +64,12 @@ const Filter = () => {
     <Container>
       <Input placeholder="Enter an address, neighborhood, city, or ZIP code" />
       <Dropdown
+        open={open}
         menu={{ items: menu, }}
         placement="bottomRight"
         trigger={'click'}
         arrow={{ pointAtCenter: true }}
+        onOpenChange={() => setOpen(!open)}
       >
         <div>
           <Button type={"light"}>

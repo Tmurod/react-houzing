@@ -1,6 +1,7 @@
-// connect cards to swagger apis
 // signIn page
-// connect section "category" to apis
 // testimonials
 // properties
-// .env
+// cards to home error
+// useReplace
+// filter bug
+// from 4 to 7 lesson replay

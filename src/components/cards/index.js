@@ -1,5 +1,6 @@
 import { CardIcons, CardInfo, CardPrice, Container, Icons, Img } from "./style";
 import image from "../../assets/images/no image.jpg";
+
 const Cards = (props) => {
   return (
     <Container>
