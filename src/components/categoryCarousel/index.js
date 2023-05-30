@@ -46,7 +46,7 @@ const Category = () => {
       <Slider {...settings} >
         {
           data.map(val => {
-            return <CategoryCard data={val} key={val.id} onClick={() => navigate(`/properties?category=${val?.name}`)} />
+            return <CategoryCard data={val} key={val.id} onClick={() => navigate(`/properties?category_id=${val?.name}`)} />
           })
         }
         {settings.appendDots}

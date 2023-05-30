@@ -3,14 +3,13 @@ import { Button } from "../generics/button/style";
 import { Input } from "../generics/input/style";
 import { Container, Icon, FilterMenu, FilterRows } from "./style";
 import { Dropdown } from "antd";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import Replace from "../../hooks/useReplace";
 
 const Filter = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
- 
 
   const countryRef = useRef();
   const regionRef = useRef();
@@ -25,16 +24,14 @@ const Filter = () => {
   const maxRef = useRef();
 
   const change = (e) => {
-    navigate(`/${Replace(e.target.value, e.target.placeholder.toLowerCase())}`);
-    // console.log(e.target.value, e.target.placeholder);
+    navigate(`${location?.pathname}${Replace(e.target.value, e.target.name)}`);
   }
-
   const menu = [{
     label: <FilterMenu>
       <>
         <h1 className="title">Address</h1>
         <FilterRows>
-          <Input onChange={change} placeholder="Country" ref={countryRef} />
+          <Input onChange={change} placeholder="Country" name="country" ref={countryRef} /* defaultValue={query.get("country")} */ />
           <Input placeholder="Region" ref={regionRef} />
           <Input placeholder="City" ref={cityRef} />
           <Input placeholder="Zip code" ref={codeRef} />
