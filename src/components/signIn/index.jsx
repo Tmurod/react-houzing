@@ -1,32 +1,47 @@
 import { Container, Content } from "./style";
 import { Input } from "../generics/input/style";
 import { Button } from "../generics/button/style";
-import useReplace from "../../hooks/useRequest.js";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import useRequest from "../../hooks/useRequest.js";
+import { message } from "antd";
 
 const SignIn = () => {
-  const request = useReplace();
+  const request = useRequest();
   const [body, setBody] = useState({});
-  const navigatge = useNavigate();
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
   
   const onChane = (e) => {
     setBody({
       ...body,
       [e.target.placeholder]: e.target.value
     });
+    setError(false);
+  }
+  
+  const info = (type) => {
+    message[type]("its ok");
+  }
+  
+  const warn =() => {
+    message.warning("login or password not correct");
   }
   
   const onSubmit = () => {
-    console.log(body);
     fetch("http://localhost:8081/api/public/auth/login", {
       method: "POST",
-      header: {
+      headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body)
     })
+    .then(res => res.json())
+    .then(res => {
+      // if (res.authenticationToken) navigate("/home");
+      // info();
+      res.authenticationToken ? navigate("/home") : warn();
+    });
   }
   
     return (

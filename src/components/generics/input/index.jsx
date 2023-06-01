@@ -1,24 +1,13 @@
 import { Input, Container, Icon } from "./style"
 import { forwardRef } from "react";
 
-// const GenInput = (props) => {
-//     return (
-//         <Container>
-//           <Icon>
-//             {props.icon}
-//           </Icon>
-//           <Input placeholder={props.placeholder} name={props.name} type={props.type} value={props.value} defaultValue={props.defValue} onChange={props.onChange} width={props.width} height={props.height} icon={props.icon} />
-//         </Container>
-//     );
-// }
-
-const GenInput = ((props, ref) => {
+const GenInput = ((props) => {
   return (
     <Container>
       <Icon>
         {props.icon}
       </Icon>
-      <Input placeholder={props.placeholder} name={props.name} type={props.type} value={props.value} defaultValue={props.defValue} onChange={props.onChange} width={props.width} height={props.height} icon={props.icon} />
+      <Input placeholder={props.placeholder} name={props.name} type={props.type} value={props.value} defaultValue={props.defaultValue} onChange={props.onChange} width={props.width} height={props.height} icon={props.icon} />
     </Container>
   )
 });
