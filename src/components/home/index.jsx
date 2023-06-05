@@ -5,15 +5,19 @@ import Choose from "../choose";
 import Image from "../image/image";
 import Category from "../categoryCarousel";
 import { useEffect } from "react";
+import Recommended from "../recommended";
+import Testimonials from "../testimonials";
 
 const Home = () => {
     return (
         <Container>
             <IntroCarousel />
-            {/* <Cards /> */}
+            <Recommended text="Recommended" />
             <Choose />
             <Category />
             <Image />
+            <Recommended text="Recent Properties for Rent" />
+            <Testimonials />
         </Container>
     );
 }

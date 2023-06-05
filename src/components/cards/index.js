@@ -2,6 +2,7 @@ import { CardIcons, CardInfo, CardPrice, Container, Icons, Img } from "./style";
 import image from "../../assets/images/no image.jpg";
 
 const Cards = (props) => {
+  // console.log(props.data.houseDetails);
   return (
     <Container>
       <Img src={props.data.attachments.imgPath || image} />
@@ -11,7 +12,7 @@ const Cards = (props) => {
         <CardIcons>
           <CardIcons.Item>
             <Icons.Bed />
-            <p>Beds {props.data.houseDetails.beds || "4 Beds"}</p>
+            {<p>Beds {props.data.houseDetails.beds || "4 Beds"}</p>}
           </CardIcons.Item>
           <CardIcons.Item>
             <Icons.Bath />

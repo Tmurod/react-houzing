@@ -12,7 +12,6 @@ import { ReactComponent as arrow } from "../../assets/icons/arrow1.svg";
 
 export const Section = styled.div`
 background: #0D263B;
-margin-top: 48px;
 padding-bottom: 24px;
 `;
 

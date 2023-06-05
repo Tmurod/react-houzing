@@ -56,11 +56,14 @@ gap: 20px;
 `;
 
 export const UserContent = styled.div`
-flex: 0.965;
+flex: 1;
 `;
 
 export const ContentInfo = styled.div`
-flex: 3.035;
+flex: 3;
+width: 100%;
+max-width: 880px;
+min-width: 700px;
 `;
 
 export const HomeInfo = styled.div`

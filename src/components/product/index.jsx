@@ -2,9 +2,25 @@ import { Container, Content, ContentInfo, Description, HomeInfo, HomeTitle, Home
 import img from "../../assets/images/unsplash_VWcPlbHglYc.png";
 import img1 from "../../assets/images/unsplash_ZtC4_rPCRXA.png";
 import { useEffect } from "react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import useRequest from "../../hooks/useRequest";
 
 
 const Product = (props) => {
+  
+  const [data, setData] = useState([]);
+  const params = useParams();
+  const request = useRequest();
+  useEffect(() => {
+    fetch(`https://houzing-app.herokuapp.com/api/v1/houses/id/${params?.id}`)
+    .then(res => res.json())
+    .then(res => {
+      setData(res?.data);
+      window.scrollTo(0, 0);
+    })
+  },[params?.id]);
+  
     return (
         <Container>
             <ImageContent>
@@ -36,7 +52,7 @@ const Product = (props) => {
                                 <Icons.Heart />
                             </HomeTitleInfo>
                         </HomeTitle>
-                        <HomeTitle end>
+                        <HomeTitle end='true'>
                             <HomeTitleInfo>
                                 <del>
                                     $2,800/mo
@@ -128,7 +144,7 @@ const Product = (props) => {
                             location
                         </h2>
                         <div className="div">
-                            <div className="map" map>
+                            <div className="map" map='true'>
                                 <div>
                                     <h3>
                                         {props.address || "Address"}:

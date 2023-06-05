@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { Container } from "./style"
 import Cards from "../cards";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import useRequest from "../../hooks/useRequest";
 
 const { REACT_APP_BASE_URL: url } = process.env;
 
 const Properties = () => {
   const [data, setData] = useState([]);
   const { search } = useLocation();
+  const navigate = useNavigate();
+  const request = useRequest();
 
   useEffect(() => {
     fetch(`${url}/houses/list${search}`)
@@ -16,12 +19,16 @@ const Properties = () => {
         setData(res.data);
       });
   }, [search]);
+
+  const select = (id) => {
+    navigate(`/properties/${id}`);
+  }
+
   return (
     <Container>
       {
         data.map(val => {
-          // console.log(val);
-          return <Cards key={val.id} data={val} />
+          return <Cards key={val.id} data={val} onClick={val.id} />
         })
       }
     </Container>
